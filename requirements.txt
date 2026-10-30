@@ -1,0 +1,21 @@
+# 학습·평가·추론에 실제로 사용한 환경 (Windows 11, Python 3.9.25, conda env)
+# torch는 CUDA 12.1 빌드를 사용했다. GPU로 학습하려면:
+#   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1
+torchvision==0.20.1        # MobileNet 백본 실험(1~9, 13)에서만 필요
+albumentations==2.0.8      # 학습 데이터 증강
+opencv-python==5.0.0.93
+numpy==2.0.2
+pandas==2.3.3
+tqdm==4.70.0
+matplotlib==3.9.4          # 학습 곡선 저장
+certifi==2026.6.17         # MobileNet 사전학습 가중치 다운로드 시에만 사용
+onnxruntime==1.19.2        # ONNX 모델 추론/평가 (detect_video.py, evaluate_model.py)
+onnx==1.19.1               # ONNX export (scripts/export_onnx.py)
+
+# 참고: models/person_detector_lite.onnx 자체는 다른 환경(torch 2.13.0+cpu, onnx 1.22.0,
+# Python 3.13)에서 export했다. 위 환경에서 scripts/export_onnx.py로 실험 11의
+# person_detector_script.pt를 다시 export하면 출력이 완전히 같음(차이 0)을 확인했다.
+
+# YOLOv8n 베이스라인(training/baseline/)을 재현할 때만:
+# ultralytics==8.4.104

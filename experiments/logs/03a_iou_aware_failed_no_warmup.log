@@ -1,0 +1,32 @@
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+DEVICE: cuda
+Grid size: 20x15 (stride 16)
+Train: 13278  Valid: 1370
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+Epoch [1/50] Train Loss: 3.8422  Val Loss: 3.2866  Val mAP@0.5: 0.0001  Val Recall: 0.0017  (best mAP: 0.0001)
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+Epoch [2/50] Train Loss: 3.1780  Val Loss: 3.2051  Val mAP@0.5: 0.0001  Val Recall: 0.0003  (best mAP: 0.0001)
+Epoch [3/50] Train Loss: 3.1011  Val Loss: 3.1507  Val mAP@0.5: 0.0001  Val Recall: 0.0005  (best mAP: 0.0001)

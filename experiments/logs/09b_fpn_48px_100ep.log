@@ -1,0 +1,70 @@
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+DEVICE: cuda
+FPN 2레벨: /8 40x30, /16 20x15 | 레벨 경계(박스 높이): [48.0] px | ch=64
+Train: 13278  Valid: 1370
+체크포인트에서 재개: ./01_custom_model/runs/9_fpn_48px/person_detector.pth (epoch 63부터)
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+Epoch [64/100] Train Loss: 2.2640  Val Loss: 2.3816  Val mAP@0.5: 0.2897  Val Recall: 0.7186  (best mAP: 0.2899)  양성셀 /8:135,029(49.7%) /16:136,438(50.3%)
+Epoch [65/100] Train Loss: 2.2672  Val Loss: 2.3783  Val mAP@0.5: 0.2917  Val Recall: 0.7231  (best mAP: 0.2917)  양성셀 /8:134,689(49.6%) /16:136,807(50.4%)
+Epoch [66/100] Train Loss: 2.2674  Val Loss: 2.3784  Val mAP@0.5: 0.2902  Val Recall: 0.7207  (best mAP: 0.2917)  양성셀 /8:134,720(49.6%) /16:136,763(50.4%)
+Epoch [67/100] Train Loss: 2.2679  Val Loss: 2.3704  Val mAP@0.5: 0.2935  Val Recall: 0.7269  (best mAP: 0.2935)  양성셀 /8:134,651(49.6%) /16:137,087(50.4%)
+Epoch [68/100] Train Loss: 2.2637  Val Loss: 2.3771  Val mAP@0.5: 0.2912  Val Recall: 0.7229  (best mAP: 0.2935)  양성셀 /8:135,086(49.8%) /16:136,228(50.2%)
+Epoch [69/100] Train Loss: 2.2598  Val Loss: 2.3741  Val mAP@0.5: 0.2921  Val Recall: 0.7282  (best mAP: 0.2935)  양성셀 /8:134,519(49.6%) /16:136,836(50.4%)
+Epoch [70/100] Train Loss: 2.2627  Val Loss: 2.3808  Val mAP@0.5: 0.2883  Val Recall: 0.7207  (best mAP: 0.2935)  양성셀 /8:134,476(49.6%) /16:136,792(50.4%)
+Epoch [71/100] Train Loss: 2.2635  Val Loss: 2.3798  Val mAP@0.5: 0.2882  Val Recall: 0.7207  (best mAP: 0.2935)  양성셀 /8:134,748(49.6%) /16:136,729(50.4%)
+Epoch [72/100] Train Loss: 2.2644  Val Loss: 2.3751  Val mAP@0.5: 0.2925  Val Recall: 0.7230  (best mAP: 0.2935)  양성셀 /8:134,859(49.6%) /16:136,782(50.4%)
+Epoch [73/100] Train Loss: 2.2647  Val Loss: 2.3778  Val mAP@0.5: 0.2924  Val Recall: 0.7256  (best mAP: 0.2935)  양성셀 /8:134,523(49.5%) /16:136,993(50.5%)
+Epoch [74/100] Train Loss: 2.2606  Val Loss: 2.3745  Val mAP@0.5: 0.2936  Val Recall: 0.7245  (best mAP: 0.2936)  양성셀 /8:135,003(49.7%) /16:136,599(50.3%)
+Epoch [75/100] Train Loss: 2.2596  Val Loss: 2.3740  Val mAP@0.5: 0.2917  Val Recall: 0.7222  (best mAP: 0.2936)  양성셀 /8:134,365(49.5%) /16:136,987(50.5%)
+Epoch [76/100] Train Loss: 2.2626  Val Loss: 2.3742  Val mAP@0.5: 0.2911  Val Recall: 0.7241  (best mAP: 0.2936)  양성셀 /8:134,339(49.5%) /16:136,956(50.5%)
+Epoch [77/100] Train Loss: 2.2582  Val Loss: 2.3727  Val mAP@0.5: 0.2901  Val Recall: 0.7221  (best mAP: 0.2936)  양성셀 /8:134,902(49.6%) /16:136,825(50.4%)
+Epoch [78/100] Train Loss: 2.2566  Val Loss: 2.3742  Val mAP@0.5: 0.2898  Val Recall: 0.7232  (best mAP: 0.2936)  양성셀 /8:134,816(49.7%) /16:136,680(50.3%)
+Epoch [79/100] Train Loss: 2.2595  Val Loss: 2.3721  Val mAP@0.5: 0.2934  Val Recall: 0.7226  (best mAP: 0.2936)  양성셀 /8:134,672(49.6%) /16:136,897(50.4%)
+Epoch [80/100] Train Loss: 2.2610  Val Loss: 2.3724  Val mAP@0.5: 0.2931  Val Recall: 0.7229  (best mAP: 0.2936)  양성셀 /8:134,590(49.6%) /16:136,931(50.4%)
+Epoch [81/100] Train Loss: 2.2594  Val Loss: 2.3743  Val mAP@0.5: 0.2909  Val Recall: 0.7221  (best mAP: 0.2936)  양성셀 /8:134,821(49.6%) /16:136,852(50.4%)
+Epoch [82/100] Train Loss: 2.2611  Val Loss: 2.3745  Val mAP@0.5: 0.2927  Val Recall: 0.7227  (best mAP: 0.2936)  양성셀 /8:134,238(49.5%) /16:137,161(50.5%)
+Epoch [83/100] Train Loss: 2.2647  Val Loss: 2.3756  Val mAP@0.5: 0.2925  Val Recall: 0.7213  (best mAP: 0.2936)  양성셀 /8:134,395(49.6%) /16:136,762(50.4%)
+Epoch [84/100] Train Loss: 2.2620  Val Loss: 2.3720  Val mAP@0.5: 0.2928  Val Recall: 0.7221  (best mAP: 0.2936)  양성셀 /8:134,399(49.5%) /16:137,027(50.5%)
+Epoch [85/100] Train Loss: 2.2582  Val Loss: 2.3726  Val mAP@0.5: 0.2942  Val Recall: 0.7237  (best mAP: 0.2942)  양성셀 /8:134,747(49.6%) /16:136,865(50.4%)
+Epoch [86/100] Train Loss: 2.2591  Val Loss: 2.3723  Val mAP@0.5: 0.2933  Val Recall: 0.7237  (best mAP: 0.2942)  양성셀 /8:134,738(49.6%) /16:136,744(50.4%)
+Epoch [87/100] Train Loss: 2.2613  Val Loss: 2.3726  Val mAP@0.5: 0.2923  Val Recall: 0.7235  (best mAP: 0.2942)  양성셀 /8:134,832(49.7%) /16:136,726(50.3%)
+Epoch [88/100] Train Loss: 2.2578  Val Loss: 2.3720  Val mAP@0.5: 0.2923  Val Recall: 0.7246  (best mAP: 0.2942)  양성셀 /8:134,309(49.5%) /16:137,201(50.5%)
+Epoch [89/100] Train Loss: 2.2544  Val Loss: 2.3724  Val mAP@0.5: 0.2928  Val Recall: 0.7225  (best mAP: 0.2942)  양성셀 /8:134,392(49.5%) /16:136,846(50.5%)
+Epoch [90/100] Train Loss: 2.2629  Val Loss: 2.3736  Val mAP@0.5: 0.2931  Val Recall: 0.7222  (best mAP: 0.2942)  양성셀 /8:134,462(49.5%) /16:136,928(50.5%)
+Epoch [91/100] Train Loss: 2.2602  Val Loss: 2.3741  Val mAP@0.5: 0.2916  Val Recall: 0.7231  (best mAP: 0.2942)  양성셀 /8:134,678(49.6%) /16:136,760(50.4%)
+Epoch [92/100] Train Loss: 2.2575  Val Loss: 2.3725  Val mAP@0.5: 0.2930  Val Recall: 0.7229  (best mAP: 0.2942)  양성셀 /8:134,473(49.6%) /16:136,799(50.4%)
+Epoch [93/100] Train Loss: 2.2584  Val Loss: 2.3730  Val mAP@0.5: 0.2926  Val Recall: 0.7236  (best mAP: 0.2942)  양성셀 /8:135,027(49.7%) /16:136,542(50.3%)
+Epoch [94/100] Train Loss: 2.2606  Val Loss: 2.3729  Val mAP@0.5: 0.2928  Val Recall: 0.7224  (best mAP: 0.2942)  양성셀 /8:134,739(49.6%) /16:136,767(50.4%)
+Epoch [95/100] Train Loss: 2.2548  Val Loss: 2.3729  Val mAP@0.5: 0.2928  Val Recall: 0.7230  (best mAP: 0.2942)  양성셀 /8:134,822(49.7%) /16:136,684(50.3%)
+Epoch [96/100] Train Loss: 2.2584  Val Loss: 2.3722  Val mAP@0.5: 0.2924  Val Recall: 0.7237  (best mAP: 0.2942)  양성셀 /8:134,951(49.7%) /16:136,553(50.3%)
+Epoch [97/100] Train Loss: 2.2563  Val Loss: 2.3726  Val mAP@0.5: 0.2927  Val Recall: 0.7229  (best mAP: 0.2942)  양성셀 /8:134,928(49.7%) /16:136,663(50.3%)
+Epoch [98/100] Train Loss: 2.2606  Val Loss: 2.3727  Val mAP@0.5: 0.2932  Val Recall: 0.7239  (best mAP: 0.2942)  양성셀 /8:134,561(49.6%) /16:136,695(50.4%)
+Epoch [99/100] Train Loss: 2.2585  Val Loss: 2.3739  Val mAP@0.5: 0.2925  Val Recall: 0.7217  (best mAP: 0.2942)  양성셀 /8:134,820(49.7%) /16:136,539(50.3%)
+Epoch [100/100] Train Loss: 2.2570  Val Loss: 2.3721  Val mAP@0.5: 0.2920  Val Recall: 0.7235  (best mAP: 0.2942)  양성셀 /8:134,554(49.6%) /16:136,833(50.4%)
+TorchScript 저장 완료(마지막 epoch): ./01_custom_model/runs/9_fpn_48px_100ep\person_detector_script_last.pt
+TorchScript 저장 완료(best, mAP=0.2942): ./01_custom_model/runs/9_fpn_48px_100ep\person_detector_script.pt
+학습 종료. best mAP@0.5 = 0.2942 (./01_custom_model/runs/9_fpn_48px_100ep\best_model.pth)

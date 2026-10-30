@@ -1,0 +1,27 @@
+12단계 (FPN + custom lite 조합) 상태: 미실행 / 재개 안 함
+==============================================
+
+목적: FPN 구조를 11단계 체급(custom lite, 채널 16,24,32,64)에 적용해
+9단계 수준 Recall(70%대) + 11단계 수준 mAP(37%대) 동시 달성을 노린 실험.
+
+구현은 완료됨 (CustomBackbone에 fpn=True 멀티탭 모드 추가, PersonDetector의
+FPN 분기를 mobilenet/custom 둘 다 받도록 일반화). 회귀 테스트와 스모크
+테스트(3 epoch, 200장)까지 통과 확인:
+  - 레벨 배정 /8 49.8% / /16 50.2%로 정상 균형
+  - loss 정상 하강, 크래시 없음
+
+명령어 (재개 시 그대로 사용 가능, --resume 없이 처음부터):
+  python train_person_detector.py --data-root ./archive --backbone custom \
+    --no-pretrained --iou-aware --iou-aware-warmup 5 \
+    --fpn --fpn-ch 32 --fpn-boundaries 48 --custom-channels 16 24 32 64 \
+    --epochs 100 --conf-threshold 0.05 --num-workers 4 \
+    --output-dir ./01_custom_model/runs/12_custom_lite_fpn
+
+예상 연산량: 144.60 MMACs (11단계 141.6M과 거의 동일, +2.1%)
+
+2026-08-16: 사용자 지시로 학습 시작 직후(epoch 1 완료 전) 중단.
+산출물 없음(체크포인트 미생성). 시간 부족으로 13단계(언샤프 마스크
+순서 재검증)를 우선 진행하기로 하고, 12단계는 재개하지 않기로 함.
+
+재개하려면: 위 명령어 그대로 실행(코드는 이미 구현돼 있어 추가 작업
+불필요, 스모크 테스트도 이미 통과했으므로 바로 본 실험 가능).

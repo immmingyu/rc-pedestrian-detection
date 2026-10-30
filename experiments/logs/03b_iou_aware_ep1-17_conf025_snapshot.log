@@ -1,0 +1,46 @@
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+DEVICE: cuda
+Grid size: 20x15 (stride 16)
+Train: 13278  Valid: 1370
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+Epoch [1/50] Train Loss: 3.8670  Val Loss: 3.5945  Val mAP@0.5: 0.0072  Val Recall: 0.3629  (best mAP: 0.0072)
+Epoch [2/50] Train Loss: 3.4189  Val Loss: 3.4920  Val mAP@0.5: 0.0421  Val Recall: 0.4142  (best mAP: 0.0421)
+Epoch [3/50] Train Loss: 3.3440  Val Loss: 3.4224  Val mAP@0.5: 0.0458  Val Recall: 0.4187  (best mAP: 0.0458)
+Epoch [4/50] Train Loss: 3.2983  Val Loss: 3.3787  Val mAP@0.5: 0.0630  Val Recall: 0.4495  (best mAP: 0.0630)
+Epoch [5/50] Train Loss: 3.2514  Val Loss: 3.3747  Val mAP@0.5: 0.0753  Val Recall: 0.4422  (best mAP: 0.0753)
+Epoch [6/50] Train Loss: 2.9975  Val Loss: 3.0587  Val mAP@0.5: 0.0437  Val Recall: 0.1415  (best mAP: 0.0753)
+Epoch [7/50] Train Loss: 2.9683  Val Loss: 3.0502  Val mAP@0.5: 0.0541  Val Recall: 0.1430  (best mAP: 0.0753)
+Epoch [8/50] Train Loss: 2.9510  Val Loss: 3.0202  Val mAP@0.5: 0.0633  Val Recall: 0.1502  (best mAP: 0.0753)
+Epoch [9/50] Train Loss: 2.9370  Val Loss: 3.0016  Val mAP@0.5: 0.0608  Val Recall: 0.1517  (best mAP: 0.0753)
+Epoch [10/50] Train Loss: 2.9189  Val Loss: 3.0027  Val mAP@0.5: 0.0706  Val Recall: 0.1712  (best mAP: 0.0753)
+Epoch [11/50] Train Loss: 2.9107  Val Loss: 2.9758  Val mAP@0.5: 0.0769  Val Recall: 0.1591  (best mAP: 0.0769)
+Epoch [12/50] Train Loss: 2.8986  Val Loss: 2.9656  Val mAP@0.5: 0.0716  Val Recall: 0.1482  (best mAP: 0.0769)
+Epoch [13/50] Train Loss: 2.8857  Val Loss: 2.9579  Val mAP@0.5: 0.0770  Val Recall: 0.1655  (best mAP: 0.0770)
+Epoch [14/50] Train Loss: 2.8770  Val Loss: 2.9609  Val mAP@0.5: 0.0844  Val Recall: 0.1756  (best mAP: 0.0844)
+Epoch [15/50] Train Loss: 2.8706  Val Loss: 2.9436  Val mAP@0.5: 0.0841  Val Recall: 0.1712  (best mAP: 0.0844)
+Epoch [16/50] Train Loss: 2.8626  Val Loss: 2.9291  Val mAP@0.5: 0.0887  Val Recall: 0.1953  (best mAP: 0.0887)
+Epoch [17/50] Train Loss: 2.8561  Val Loss: 2.9219  Val mAP@0.5: 0.0912  Val Recall: 0.1892  (best mAP: 0.0912)

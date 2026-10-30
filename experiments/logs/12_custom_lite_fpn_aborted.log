@@ -1,0 +1,30 @@
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+DEVICE: cuda
+FPN 2레벨: /8 40x30, /16 20x15 | 레벨 경계(박스 높이): [48.0] px | ch=32
+Train: 13278  Valid: 1370
+Custom backbone 채널: (16, 24, 32, 64) (기본값 (32, 64, 128, 256) 아님)
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\augmentations\dropout\functional.py:559: RuntimeWarning: invalid value encountered in divide
+  visibility_ratios = remaining_areas / box_areas
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
+<user-site-packages>\albumentations\check_version.py:147: UserWarning: Error fetching version info [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192)
+  data = fetch_version_info()
