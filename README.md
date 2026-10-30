@@ -135,10 +135,25 @@ PyTorch가 ARM용 LibTorch 공식 배포본을 제공하지 않아 RPi4 빌드�
 <!-- TODO: RPi4에서 사용한 OS·OpenCV·ONNX Runtime 버전 -->
 
 ```bash
+# conda를 쓰는 경우 먼저 환경을 만들고 활성화
+conda create -n rc python=3.9 -y
+conda activate rc
+
 pip install -r requirements.txt
 # GPU로 학습하려면 CUDA 빌드 torch를 따로 설치
 pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
 ```
+
+**0. 바로 해보기** (데이터셋 없이, 저장소에 든 샘플 영상과 배포 모델로 실행)
+
+```bash
+python training/detect_video.py --source samples/campus_sample.mp4
+python training/detect_video.py --source 0     # 웹캠
+```
+
+- `samples/campus_sample.mp4`는 캠퍼스에서 찍은 원본 주행 영상에서 탐지가 잘 되는 5초 구간을 골라 자른 샘플입니다(1280×720, 소리 없음). 가까운 보행자는 꾸준히 잡지만, 멀리 작게 찍힌 사람은 놓치는 경우가 있습니다([한계와 향후 과제](#한계와-향후-과제) 참고).
+- 화면에 검출 박스와 FPS가 표시되고, 종료는 `q`입니다.
+- 영상 파일은 원본 FPS에 맞춰 실제 속도로 재생됩니다. 최대 속도로 보려면 `--fast`를 붙입니다(터미널의 FPS 요약은 어느 쪽이든 대기 시간을 뺀 순수 처리 속도).
 
 **1. 데이터 준비**: 아래 [데이터셋](#데이터셋) 항목의 폴더 배치대로 `archive/`에 둡니다. 모든 스크립트는 `--data-root`로 위치를 지정합니다(기본값 `./archive`).
 
@@ -238,6 +253,8 @@ python scripts/check_box_roundtrip.py --data-root ./archive
 │   └── CMakeLists.txt             # 데모 빌드 (Windows / Linux)
 ├── models/
 │   └── person_detector_lite.onnx  # 최종 배포 모델 (실험 11, 0.91MB)
+├── samples/
+│   └── campus_sample.mp4          # 바로 해보기용 캠퍼스 영상 (5초)
 ├── experiments/
 │   ├── logs/                      # 실험별 학습 로그 19개 (UTF-8, 파일명 앞 번호 = 실험 번호)
 │   └── plots/                     # 실험별 학습 곡선 11개 (중단·미실행 실험은 없음)
@@ -250,10 +267,10 @@ python scripts/check_box_roundtrip.py --data-root ./archive
 
 **받는 방법과 폴더 배치**
 
+- 받은 곳: 학습에는 이 Roboflow 데이터셋을 Kaggle에 올린 사본을 받아 사용했습니다: [Kaggle - People Detection](https://www.kaggle.com/datasets/adilshamim8/people-detection)
 - 버전: 학습에 쓴 사본의 `README.dataset.txt` 기준 **"People Detection > 2025-03-31 9:04pm"** (전체 17,401장: train 15,210 / valid 1,431 / test 760).
-- 형식: 분할(train/valid/test)마다 이미지 파일과 `_annotations.csv` 한 개. CSV 열은 `filename,width,height,class,xmin,ymin,xmax,ymax`(픽셀 좌표, 클래스 `person`)입니다. Roboflow 데이터셋 페이지에서 이 열 구성의 CSV 형식으로 내보내 받습니다.
-  <!-- TODO: 학습에 쓴 사본에는 README.roboflow.txt가 없어 Roboflow 내보내기 옵션 이름과 다운로드 경로(Roboflow 직접 / 다른 미러)를 확인하지 못함 -->
-- 압축을 풀어 분할 이름이 두 번 겹치는 구조로 둡니다. 학습·평가 스크립트는 `<data-root>/<split>/<split>/_annotations.csv`를 읽습니다.
+- 형식: 분할(train/valid/test)마다 이미지 파일과 `_annotations.csv` 한 개. CSV 열은 `filename,width,height,class,xmin,ymin,xmax,ymax`(픽셀 좌표, 클래스 `person`)입니다.
+- Kaggle 사본의 압축을 풀면 분할 이름이 두 번 겹치는 `archive/train/train` 구조가 됩니다. 이 `archive/`를 저장소 루트에 그대로 두면 됩니다. 학습·평가 스크립트는 `<data-root>/<split>/<split>/_annotations.csv`를 읽습니다.
 
 ```text
 archive/

@@ -191,16 +191,31 @@ def run(args):
         h0 = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         writer = cv2.VideoWriter(args.save, fourcc, fps_in, (w0, h0))
 
+    # 영상 파일을 화면에 띄울 때는 원본 FPS에 맞춰 실제 속도로 재생한다. 첫 프레임 시점을
+    # 기준으로 k번째 프레임이 끝나야 할 시각까지 남은 시간만큼만 기다리므로, 처리 시간은
+    # 자동으로 빠지고 waitKey 오차도 누적되지 않는다. 웹캠·--no-display·--fast는 기다리지 않음.
+    src_fps = cap.get(cv2.CAP_PROP_FPS)
+    realtime = (not args.no_display and not args.fast and not isinstance(source, int)
+                and src_fps > 0)
+    frame_period = 1.0 / src_fps if realtime else 0.0
+    play_start = None
+    last_wait = 0.0  # 직전 프레임에서 재생 속도 맞추느라 기다린 시간
+    waited = 0.0     # 누적 대기 시간 (FPS 계산에서 뺌)
+
     prev_time = time.time()
     frame_idx = 0
 
     # FPS 측정: 처음 --warmup-frames장은 모델/디바이스 워밍업(캐시 미스, CUDA 컨텍스트
     # 초기화 등)으로 느리게 나오므로 평균 계산에서 제외한다. 워밍업이 끝나는 시점부터
-    # 시간을 다시 재기 시작해서 순수 추론 구간만 평균을 낸다.
+    # 시간을 다시 재기 시작해서 순수 추론 구간만 평균을 낸다. 재생 속도 맞추기용 대기
+    # 시간은 빼고 계산한다.
     avg_start_time = None
+    avg_wait_base = 0.0
     avg_frame_count = 0
 
     while True:
+        if play_start is None:
+            play_start = time.time()
         ret, frame = cap.read()
         if not ret:
             break
@@ -229,16 +244,19 @@ def run(args):
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
         now = time.time()
-        fps = 1.0 / max(now - prev_time, 1e-6)
+        fps = 1.0 / max(now - prev_time - last_wait, 1e-6)
         prev_time = now
+        last_wait = 0.0
 
         is_warmup = frame_idx < args.warmup_frames
         if not is_warmup:
             if avg_start_time is None:
                 avg_start_time = now  # 워밍업 직후 첫 프레임 시점부터 평균 집계 시작
+                avg_wait_base = waited
             else:
                 avg_frame_count += 1
-        avg_fps = avg_frame_count / max(now - avg_start_time, 1e-6) if avg_start_time else 0.0
+        avg_fps = (avg_frame_count / max(now - avg_start_time - (waited - avg_wait_base), 1e-6)
+                   if avg_start_time else 0.0)
 
         cv2.putText(frame, f"FPS: {fps:.1f} (avg {avg_fps:.1f})  persons: {len(boxes)}", (10, 20),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
@@ -247,7 +265,16 @@ def run(args):
             writer.write(frame)
         if not args.no_display:
             cv2.imshow("Person Detection", frame)
-            if cv2.waitKey(1) & 0xFF == ord("q"):
+            delay_ms = 1
+            if realtime:
+                remaining = play_start + (frame_idx + 1) * frame_period - time.time()
+                delay_ms = max(1, int(round(remaining * 1000)))
+            wait_start = time.time()
+            key = cv2.waitKey(delay_ms) & 0xFF
+            if realtime:
+                last_wait = time.time() - wait_start
+                waited += last_wait
+            if key == ord("q"):
                 break
         if args.print_every and frame_idx % args.print_every == 0:
             tag = " [워밍업]" if is_warmup else ""
@@ -262,8 +289,11 @@ def run(args):
     if not args.no_display:
         cv2.destroyAllWindows()
 
+    if realtime and frame_idx > 0:
+        print(f"\n[재생] {frame_idx}프레임, {time.time() - play_start:.2f}초 "
+              f"(원본 {src_fps:.1f}fps 기준 {frame_idx / src_fps:.2f}초)")
     if avg_frame_count > 0:
-        total_elapsed = time.time() - avg_start_time
+        total_elapsed = time.time() - avg_start_time - (waited - avg_wait_base)
         print(f"\n[FPS 요약] 워밍업 {args.warmup_frames}프레임 제외, "
               f"측정 {avg_frame_count}프레임, 총 {total_elapsed:.2f}초 "
               f"-> 평균 {avg_frame_count / total_elapsed:.2f} FPS")
@@ -295,6 +325,9 @@ def main():
     parser.add_argument("--device", default=None, help="미지정 시 cuda 사용 가능하면 cuda, 아니면 cpu")
     parser.add_argument("--save", default=None, help="결과 영상을 저장할 경로 (mp4)")
     parser.add_argument("--no-display", action="store_true", help="GUI 없이 실행 (RPi 헤드리스 환경용)")
+    parser.add_argument("--fast", action="store_true",
+                        help="영상 파일도 원본 FPS에 맞추지 않고 최대 속도로 재생 "
+                             "(웹캠·--no-display는 원래 기다리지 않음)")
     parser.add_argument("--print-every", type=int, default=30,
                         help="콘솔에 FPS를 출력할 프레임 간격 (0이면 출력 안 함). "
                              "--no-display 여부와 무관하게 항상 출력됨")
