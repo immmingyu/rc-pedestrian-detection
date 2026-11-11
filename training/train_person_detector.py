@@ -387,7 +387,7 @@ class ResidualBlock(nn.Module):
 
 
 #  MACs 실측(320x240, stride16, neck 재투영 비용 포함):
-#    (32,64,128,256) 기본값        1490.84M  (팀원 모델과 동일 체급)
+#    (32,64,128,256) 기본값        1490.84M  (베이스라인 모델과 동일 체급)
 #    (16,24,32,64)   "lite" 후보     141.56M  (9단계 FPN 52.51M의 2.70배)
 CUSTOM_CHANNELS_DEFAULT = (32, 64, 128, 256)
 
@@ -1086,7 +1086,7 @@ def main():
     parser.add_argument("--custom-channels", type=int, nargs=4, default=None,
                         metavar=("STEM", "L1", "L2", "L3"),
                         help="--backbone custom 전용 채널 축소. 기본값은 (32,64,128,256) "
-                             "(팀원 모델과 동일 체급, 1490.84M MACs). RPi4 배포 체급으로 낮추려면 "
+                             "(베이스라인 모델과 동일 체급, 1490.84M MACs). RPi4 배포 체급으로 낮추려면 "
                              "예: --custom-channels 16 24 32 64 (141.56M MACs, 9단계 FPN의 2.70배). "
                              "detect_video.py에도 동일 값을 줘야 함(raw .pth 로드 시)")
 
